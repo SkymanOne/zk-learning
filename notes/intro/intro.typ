@@ -1,4 +1,4 @@
-#import "base.typ": *
+#import "../base.typ": *
 #show: note
 
 = Introduction to Zero Knowledge Proofs
