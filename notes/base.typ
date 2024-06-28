@@ -18,3 +18,8 @@
     #doc
   ]
 )
+
+#let stroke-block(doc) = block(
+  inset: 8pt, stroke: 1pt,
+  doc
+)
