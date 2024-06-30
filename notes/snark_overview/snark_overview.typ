@@ -254,6 +254,8 @@ Given some fixed hash function: $H: M times R -> T$, we the two algorithms becom
 - `verify(m, com, r): accept if com = H(m, r)`
 
 Then we can construct a functional commitment scheme.
+
+=== Describing commitment to a function
 Given some family of functions: $F = {f: X -> Y}$
 
 The commiter acts as a prover. The prover chooeses some randonmness _r_ and commits a descirption of a function $f$ with _r_ to a verifier. The function can decribed as a circuit, or as a binary code, etc. The verifier then sends $x in X$, and the prover will respond with $y in Y$ alognside a proof $pi$, such that $f(x) = y$ and $f in F$.
@@ -272,9 +274,9 @@ We can describe a commitment to a function family $F$ using the following proced
 
  - $V("gp", "com"_f, x, y, pi) ->$ accept/reject.
 
-This evaluation protocl is a SNARK itself for the *relation*: $f(x = y), f in F, "commit"("gp", f, r) = "com"_f$
+This evaluation protocol is a SNARK itself for the *relation*: \ $f(x) = y, f in F, "commit"("gp", f, r) = "com"_f$
 
-For the setup, the public statements are $"com"_f, x, y$ that are known to verifier. The prover is proving that it know the description of $f$ (a witness), and $r$ s.t. the *relation* is true.
+For the setup, the public statements are $"com"_f, x, y$ that are known to verifier. The prover is proving that it knows the description of $f$ (a witness), and $r$ s.t. the *relation* is true.
 
 == Commitment schemes
 
@@ -374,7 +376,7 @@ this function to generate verifier's random bits on its own using _H_.
 
 The protocol becomes as follows:
 
-- Let's $x = ("com"_f, "com"_g)$
+- Let's $x = ("com"_f, "com"_g)$, and $w = (f, g)$
 
 - The prover computes _r_, such that $r <- H(x)$
 
